@@ -20,24 +20,20 @@ An interactive shell for the AWS CLI. Drop the `aws` prefix and get tab completi
 
 ## Installation
 
+### From source (recommended)
+
+Requires [pipx](https://pipx.pypa.io/stable/installation/).
+
 ```bash
 # 1. Clone the repo
 git clone https://github.com/YOUR_USERNAME/awsshell.git
 cd awsshell
 
-# 2. Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-
-# 3. Install
-pip install .
+# 2. Install with pipx (includes the Claude assistant)
+pipx install ".[claude]"
 ```
 
-To also enable the Claude assistant:
-
-```bash
-pip install ".[claude]"
-```
+This installs `awsshell` into an isolated environment and puts it on your `PATH`.
 
 ## Usage
 
@@ -87,7 +83,7 @@ iam who-can <action> [resource]          Find all principals that can perform an
 
 ### Claude assistant
 
-Requires the `claude` extra and an Anthropic API key.
+Requires an Anthropic API key.
 
 ```
 claudekey set       Save your Anthropic API key
